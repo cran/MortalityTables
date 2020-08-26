@@ -1,6 +1,32 @@
 #' @include mortalityTable.R fillAges.R
 NULL
 
+pensionTableProbArrange = function(x, q, i, qi, r, ap, api, qp, h, qw, yx, qg, as.data.frame = TRUE, table, ...) {
+    if (as.data.frame) {
+        data.frame(x, q, i, qi, r, ap, api, qp, h, qw, yx, qg)
+    } else {
+        states = c("a", "i", "p", "d")
+        transProb = array(0, dim = c(length(states), length(states), length(x)), dimnames = list(states, states, x))
+
+        transProb["a", "a", ] = (1 - i - q) * (1 - ap);
+        transProb["a", "i", ] = i;
+        transProb["a", "p", ] = (1 - i - q) * ap;
+        transProb["a", "d", ] = q;
+
+        transProb["i", "a", ] = r;
+        transProb["i", "i", ] = (1 - qi - r) * (1 - api);
+        transProb["i", "p", ] = (1 - qi - r) * api;
+        transProb["i", "d", ] = qi;
+
+        transProb["p", "p", ] = 1 - qp;
+        transProb["p", "d", ] = qp;
+
+        transProb["d", "d", ] = 1;
+
+        list(transitionProbabilities = transProb, widows = data.frame(x, h, qw, yx))
+    }
+}
+
 
 #' Class pensionTable
 #'
@@ -43,6 +69,7 @@ NULL
 #' @slot yx     Age difference of the widow to the deceased
 #' @slot qgx    Death probability of whole group (derived from mortalityTable), irrespective of state
 #' @slot invalids.retire    Whether invalids retire like actives or stay invalid until death
+#' @slot probs.arrange A function that takes the individual transition probabilities of all the components and creates one object (a data.frame or a list) that will be returned by the method \code{transitionProbabilities}. The default arranges all tables without further modification. However, some pension tables (like the german Heubeck table) require the total mortality to be recalculated from the individual mortalities of actives and disabled. In this case, the function assigned to this slot will also calculate that total probability.
 #'
 #' @export pensionTable
 #' @exportClass pensionTable
@@ -59,39 +86,15 @@ pensionTable = setClass(
         qwy   = "mortalityTable",
         yx    = "mortalityTable",
         qgx   = "mortalityTable",
-        invalids.retire = "logical"
+        invalids.retire = "logical",
+        probs.arrange = "function"
     ),
     prototype = list(
-        invalids.retire = FALSE
+        invalids.retire = FALSE,
+        probs.arrange = pensionTableProbArrange
     ),
     contains = "mortalityTable"
 )
-
-pensionTableProbArrange = function(x, q, i, qi, r, ap, api, qp, h, qw, yx, qg, as.data.frame = TRUE) {
-    if (as.data.frame) {
-        data.frame(x, q, i, qi, r, ap, api, qp, h, qw, yx, qg)
-    } else {
-        states = c("a", "i", "p", "d")
-        transProb = array(0, dim = c(length(states), length(states), length(x)), dimnames = list(states, states, x))
-
-        transProb["a", "a", ] = (1 - i - q) * (1 - ap);
-        transProb["a", "i", ] = i;
-        transProb["a", "p", ] = (1 - i - q) * ap;
-        transProb["a", "d", ] = q;
-
-        transProb["i", "a", ] = r;
-        transProb["i", "i", ] = (1 - qi - r) * (1 - api);
-        transProb["i", "p", ] = (1 - qi - r) * api;
-        transProb["i", "d", ] = qi;
-
-        transProb["p", "p", ] = 1 - qp;
-        transProb["p", "d", ] = qp;
-
-        transProb["d", "d", ] = 1;
-
-        list(transitionProbabilities = transProb, widows = data.frame(x, h, qw, yx))
-    }
-}
 
 #' Return all transition probabilities of the pension table (generational probabilities)
 #'
@@ -183,10 +186,10 @@ setMethod("transitionProbabilities", "pensionTable",
               yx  = deathProbabilities(object@yx, ..., ages = ages, YOB = YOB);
               qg  = deathProbabilities(object@qgx, ..., ages = ages, YOB = YOB);
               if (!OverallMortality) {
-                  pensionTableProbArrange(x, q, i, qi, r, ap, api, qp, h, qw, yx, qg, as.data.frame = as.data.frame)
+                  object@probs.arrange(x, q, i, qi, r, ap, api, qp, h, qw, yx, qg, as.data.frame = as.data.frame, table = object)
               } else {
                   # Gesamttafel, i.e. actives, invalids and pensioners have the same mortality qg
-                  pensionTableProbArrange(x, qg, i, qg, r, ap, api, qg, h, qw, yx, qg, as.data.frame = as.data.frame)
+                  object@probs.arrange(x, qg, i, qg, r, ap, api, qg, h, qw, yx, qg, as.data.frame = as.data.frame, table = object)
               }
           })
 
@@ -257,9 +260,9 @@ setMethod("periodTransitionProbabilities", "pensionTable",
               yx  = periodDeathProbabilities(object@yx, ..., ages = ages, Period = Period);
               qg  = periodDeathProbabilities(object@qgx, ..., ages = ages, Period = Period);
               if (!OverallMortality) {
-                  pensionTableProbArrange(x, q, i, qi, r, ap, api, qp, h, qw, yx, qg, as.data.frame = as.data.frame)
+                  object@probs.arrange(x, q, i, qi, r, ap, api, qp, h, qw, yx, qg, as.data.frame = as.data.frame, table = object)
               } else  {
-                  pensionTableProbArrange(x, qg, i, qg, r, ap, api, qg, h, qw, yx, qg, as.data.frame = as.data.frame)
+                  object@probs.arrange(x, qg, i, qg, r, ap, api, qg, h, qw, yx, qg, as.data.frame = as.data.frame, table = object)
               }
           })
 

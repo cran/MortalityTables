@@ -26,11 +26,13 @@
 #' @export
 plotMortalityTableComparisons = function(
     data, ...,
+    aes = NULL,
     ages = NULL,
     xlim = NULL, ylim = NULL,
     xlab = NULL, ylab = NULL,
     title = "",
     legend.position = c(0.9,0.1), legend.justification = c(1, 0),
+    legend.title = "Sterbetafel",
     legend.key.width = unit(25, "mm"),
     reference = NULL)
 {
@@ -55,7 +57,11 @@ plotMortalityTableComparisons = function(
                           env=list(refname=reference@name));
     }
 
-    pl = ggplot(data, aes(x = x, y = y, colour = data$group)) +
+    pl = ggplot(data, aes(x = x, y = y, color = group))
+    if (!is.null(aes)) {
+        pl = pl + aes
+    }
+    pl = pl +
         theme_bw() +
         theme(
             plot.title = element_text(size=18, face="bold"),
@@ -85,7 +91,7 @@ plotMortalityTableComparisons = function(
 
         ) +
         # annotation_logticks(sides="lr") +
-        xlab("Alter") + labs(colour="Sterbetafel");
+        xlab("Alter") + labs(colour = legend.title);
     if (title != "") {
         pl = pl + ggtitle(title);
     }

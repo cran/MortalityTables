@@ -1,4 +1,4 @@
-#' @include mortalityTable.R mortalityTable.period.R mortalityTable.mixed.R mortalityTable.joined.R mortalityTable.observed.R
+#' @include mortalityTable.R mortalityTable.period.R mortalityTable.mixed.R mortalityTable.joined.R
 NULL
 
 #' Return the maximum age of the life table
@@ -29,10 +29,4 @@ setMethod("getOmega", "mortalityTable.mixed",
 # setMethod("getOmega", "mortalityTable.joined",
 #           function(object) {
 #               getOmega(object@table1);
-#           })
-
-# #' @describeIn getOmega Return the maximum age of the joined life table
-# setMethod("getOmega", "mortalityTable.observed",
-#           function(object) {
-#               max(object@ages, na.rm = TRUE);
 #           })
