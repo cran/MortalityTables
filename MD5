@@ -1,4 +1,4 @@
-82cd2b5db8e78176197099ce1890524b *DESCRIPTION
+eb5dd82e5470b61354b700d46f845208 *DESCRIPTION
 9012dec9709144b5506cb02fdc32caef *NAMESPACE
 b1f5b971746dfc87db560c52c1e27ad4 *R/DocumentData.R
 16f74b58bd2813fd28654e1ed0143b1a *R/ageShift.R
@@ -27,8 +27,8 @@ c4782ee27f674ba65056fceaafc9df65 *R/mortalityTable.jointLives.R
 251b14286560047e21e15eaf5f8e5a0f *R/mortalityTable.observed.R
 8e8db804aeb96504dc966a77bcc6ad75 *R/mortalityTable.period.R
 da4de3a8043801c8572fda149afef968 *R/mortalityTable.trendProjection.R
-ee15369883680eb24d5c7ac032e2c29c *R/mortalityTables.list.R
-ea035c49ff73ccb431a1cd344c946418 *R/mortalityTables.load.R
+f40d3fa82721e6d95cae2b6d9943db51 *R/mortalityTables.list.R
+b407ebeb552337ac368a606ff22c7db1 *R/mortalityTables.load.R
 64098eeb2954cbca06473def53d5e223 *R/pensionTable.R
 e194b58b05855c8e8a0b009d98e6235a *R/periodDeathProbabilities.R
 8390674eea9393f65b1dd6b32d402587 *R/plot.mortalityTable.R
@@ -44,8 +44,8 @@ e9b99a98d92fc310b4edbbed831a0d45 *R/utilityFunctions.R
 3d03f37b148bf84e084c75bdbd85215b *build/vignette.rds
 5c627512140d61f4f71494a937c9954e *data/PopulationData.AT2017.rda
 cab4a04379771b1729884b79a2af7c28 *inst/doc/using-the-mortalityTables-package.R
-959a876996b845753ac23c968c42d36a *inst/doc/using-the-mortalityTables-package.Rmd
-aa87bd7acc7f945a64910a992fb3a72c *inst/doc/using-the-mortalityTables-package.html
+b1da5e124df7dc891f82a9d4ea5d98c8 *inst/doc/using-the-mortalityTables-package.Rmd
+310cb5e86bac05c661fb7496eb23bf90 *inst/doc/using-the-mortalityTables-package.html
 bef2d605c69dd6622ec5372fd0502ebe *inst/extdata/Austria_Annuities_AVOe1996R.csv
 172d8362212b0d1d17f795989f0c00c5 *inst/extdata/Austria_Annuities_AVOe2005R.csv
 172b295bda75f7618faa3d4fcac38540 *inst/extdata/Austria_Annuities_AVOe2005R_AVBasis.csv
@@ -107,7 +107,7 @@ fc2b9b3201b043df678e8591fb20da64 *inst/extdata/USA_Annuities_Annuity2000.csv
 811c62ccef02a9fce54b25a53546eec8 *inst/extdata/USA_PensionPlans_MP2014_Female.csv
 ef61755464df8001a4e1be6a77f83d47 *inst/extdata/USA_PensionPlans_MP2014_Male.csv
 3ddec375727739eba17292d2eacfb73f *inst/extdata/USA_PensionPlans_RP2014.csv
-a3919bbf13321c0735968727d013c6c3 *man/MortalityTables-package.Rd
+c111a276b573a8e381408e91e8f12945 *man/MortalityTables-package.Rd
 1a96bc64714fe8670d66fadad070c8e0 *man/PopulationData.AT2017.Rd
 081d2ad13c74889c31e8c39ef5f02972 *man/ageShift.Rd
 68a8750a39ae9c3ecc23a512311254fd *man/ages.Rd
@@ -155,7 +155,7 @@ e5401a7fe21d1ba1fbd8ebf40f8d95c4 *man/mortalityTable.period-class.Rd
 fe71de02f0bb0c4e0593a2bb6556910b *man/mortalityTable.trendProjection-class.Rd
 e4d72d060ae1be82c8684e5e872de3af *man/mortalityTable.zeroes.Rd
 bea4f9741afaa5a2c34ab681b8a1ec3d *man/mortalityTables.list.Rd
-55e80473458df23517e6b9a251b3305d *man/mortalityTables.load.Rd
+0a40e7e06716bc48517422065e77e520 *man/mortalityTables.load.Rd
 f2e4d66c1ced82e30cbb968decfae828 *man/pT.calculateTotalMortality.Rd
 c30cfbd602817744635d40c0775c7c5c *man/pT.getSubTable.Rd
 0068bb79d79679dd9d7ef34b360992d7 *man/pT.setDimInfo.Rd
@@ -174,4 +174,4 @@ b6102696d45313e8365a98c5ce128601 *man/setModification.Rd
 6f6e489dc66aa8bd9a762612563b50cf *man/transitionProbabilities.Rd
 747339296fc01a520e207b84dd16f29b *man/undampenTrend.Rd
 c094f100cabc011e88bc8ed4225bad5c *man/whittaker.mortalityTable.Rd
-959a876996b845753ac23c968c42d36a *vignettes/using-the-mortalityTables-package.Rmd
+b1da5e124df7dc891f82a9d4ea5d98c8 *vignettes/using-the-mortalityTables-package.Rmd
