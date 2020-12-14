@@ -1,3 +1,13 @@
+## ----PackageCheck-------------------------------------------------------------
+required <- c("tidyverse")
+if (!all(sapply(required, 
+                function(pkg) requireNamespace(pkg, quietly = TRUE)))) {
+  message(paste("This vignette needs the followig packages:\n\t", 
+                paste(required, collapse = " "), 
+                "\nSince not all are installed, code will not be executed: "))
+  knitr::opts_chunk$set(eval = FALSE)
+}
+
 ## ----echo = FALSE-------------------------------------------------------------
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 options(tidyverse.quiet = TRUE)
