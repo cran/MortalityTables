@@ -1,4 +1,4 @@
-a46cf93364f4799d73ec1da0fea3810c *DESCRIPTION
+58a42db44c669ae091c0eeb120fa937a *DESCRIPTION
 9012dec9709144b5506cb02fdc32caef *NAMESPACE
 b1f5b971746dfc87db560c52c1e27ad4 *R/DocumentData.R
 16f74b58bd2813fd28654e1ed0143b1a *R/ageShift.R
@@ -41,14 +41,14 @@ b9f6b5a4590a37507c1149ab3c33e56e *R/undampenTrend.R
 a12e244792bee7c40f1222e762b39cb7 *R/utilityFunctions.R
 0494db1f997212eaa5e3d6546957c830 *R/whittaker.mortalityTable.R
 0adca72edcaac76773c80c7831bf725f *README.md
-a384f856f0ea1a5077156309780e4098 *build/vignette.rds
+59195cc800b9ff1331bca62f5376647c *build/vignette.rds
 5c627512140d61f4f71494a937c9954e *data/PopulationData.AT2017.rda
-4cc6d96b7f0f4483aa49523a96b8a6f8 *inst/doc/international-mortality-tables-overview.R
-ab2a74698c520f2c85620beaf7d889ca *inst/doc/international-mortality-tables-overview.Rmd
-706607b6136e49234d4858a81f46b851 *inst/doc/international-mortality-tables-overview.html
+effd3643d09896a9224abb1cf397e10e *inst/doc/international-mortality-tables-overview.R
+98fcbd1f95fa2bddd0d43eb9b51658ee *inst/doc/international-mortality-tables-overview.Rmd
+b8bc74ef38753ca942bc28c898e1f17d *inst/doc/international-mortality-tables-overview.html
 1eb43a11b631f289396b5112f8286b32 *inst/doc/using-the-mortalityTables-package.R
 17b500baf03b4f2fe4baf49b02882a0e *inst/doc/using-the-mortalityTables-package.Rmd
-1216010713d7d5b468a38fd380b59e9d *inst/doc/using-the-mortalityTables-package.html
+cc3a15e794f22572be281a1a93b216b4 *inst/doc/using-the-mortalityTables-package.html
 bef2d605c69dd6622ec5372fd0502ebe *inst/extdata/Austria_Annuities_AVOe1996R.csv
 172d8362212b0d1d17f795989f0c00c5 *inst/extdata/Austria_Annuities_AVOe2005R.csv
 172b295bda75f7618faa3d4fcac38540 *inst/extdata/Austria_Annuities_AVOe2005R_AVBasis.csv
@@ -85,7 +85,7 @@ f03d65be1d1ba48cd51ef21173176d0a *inst/extdata/MortalityTables_Austria_Annuities
 c83070477c2eab1abf17257cdf2d313c *inst/extdata/MortalityTables_Austria_Census.R
 d72d5352a125d620a75f4ca476b40b9d *inst/extdata/MortalityTables_Austria_Endowments_ADSt2426_2Lives.R
 25e17691d1b66295e733d7e25b60d150 *inst/extdata/MortalityTables_Austria_PopulationForecast.R
-392fadd948d190c8118427f0b82d57d2 *inst/extdata/MortalityTables_Austria_PopulationMCMC.R
+2fab8777443185145bda05b08b151065 *inst/extdata/MortalityTables_Austria_PopulationMCMC.R
 7599cf5f1d499a43aa111c24898bacd4 *inst/extdata/MortalityTables_Austria_PopulationObserved.R
 04c6c9cfc2e7a0cf51773916b9f5915d *inst/extdata/MortalityTables_Austria_VUGesamtbestand_2012-16.R
 9cee13f865906cbc37e88143a74ab59b *inst/extdata/MortalityTables_Germany_Annuities.R
@@ -181,5 +181,5 @@ b6102696d45313e8365a98c5ce128601 *man/setModification.Rd
 6f6e489dc66aa8bd9a762612563b50cf *man/transitionProbabilities.Rd
 747339296fc01a520e207b84dd16f29b *man/undampenTrend.Rd
 c094f100cabc011e88bc8ed4225bad5c *man/whittaker.mortalityTable.Rd
-ab2a74698c520f2c85620beaf7d889ca *vignettes/international-mortality-tables-overview.Rmd
+98fcbd1f95fa2bddd0d43eb9b51658ee *vignettes/international-mortality-tables-overview.Rmd
 17b500baf03b4f2fe4baf49b02882a0e *vignettes/using-the-mortalityTables-package.Rmd

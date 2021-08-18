@@ -1,7 +1,7 @@
 Package: MortalityTables
 Type: Package
-Version: 2.0.2
-Date: 2020-12-12
+Version: 2.0.3
+Date: 2021-08-17
 Title: A Framework for Various Types of Mortality / Life Tables
 Authors@R: c(person("Reinhold", "Kainhofer", role=c("aut", "cre"), email="reinhold@kainhofer.com"))
 Author: Reinhold Kainhofer [aut, cre]
@@ -39,6 +39,6 @@ Collate: 'DocumentData.R' 'mortalityTable.R' 'mortalityTable.period.R'
         'whittaker.mortalityTable.R'
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2020-12-13 00:37:07 UTC; reinhold
+Packaged: 2021-08-17 17:22:02 UTC; reinhold
 Repository: CRAN
-Date/Publication: 2020-12-14 09:10:21 UTC
+Date/Publication: 2021-08-18 07:50:15 UTC
