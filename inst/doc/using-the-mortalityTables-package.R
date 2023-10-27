@@ -10,7 +10,7 @@ if (!all(sapply(required,
 
 ## ----echo = FALSE-------------------------------------------------------------
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
-options(tidyverse.quiet = TRUE)
+# options(tidyverse.quiet = TRUE)
 
 ## ----message=FALSE------------------------------------------------------------
 library("MortalityTables")

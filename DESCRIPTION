@@ -1,10 +1,10 @@
 Package: MortalityTables
 Type: Package
-Version: 2.0.4
-Date: 2023-10-18
+Version: 2.0.5
+Date: 2023-10-27
 Title: A Framework for Various Types of Mortality / Life Tables
-Authors@R: c(person("Reinhold", "Kainhofer", role=c("aut", "cre"), email="reinhold@kainhofer.com"))
-Author: Reinhold Kainhofer [aut, cre]
+Authors@R: c(person("Reinhold", "Kainhofer", role=c("aut", "cre", "cph"), email="reinhold@kainhofer.com"))
+Author: Reinhold Kainhofer [aut, cre, cph]
 Maintainer: Reinhold Kainhofer <reinhold@kainhofer.com>
 URL: https://gitlab.open-tools.net/R/r-mortality-tables
 BugReports: https://gitlab.open-tools.net/R/r-mortality-tables/-/issues
@@ -13,11 +13,12 @@ Depends: ggplot2, R (>= 3.5)
 Imports: methods, scales, utils, pracma
 Enhances: MortalityLaws, lifecontingencies
 Suggests: knitr, tidyverse, reshape2, rmarkdown
-Description: Classes to implement and plot cohort life tables
-    for actuarial calculations. In particular, birth-year dependent mortality
+Description: Classes to implement, analyze and plot cohort life tables
+    for actuarial calculations. Birth-year dependent cohort mortality
     tables using a yearly trend to extrapolate from a base year are implemented,
     as well as period life table, cohort life tables using an age shift, and
-    merged life tables.
+    merged life tables. Additionally, several data sets from various countries 
+    are included to provide widely-used tables out of the box.
 License: GPL (>= 2)
 RoxygenNote: 7.2.3
 Collate: 'DocumentData.R' 'mortalityTable.R' 'mortalityTable.period.R'
@@ -39,6 +40,6 @@ Collate: 'DocumentData.R' 'mortalityTable.R' 'mortalityTable.period.R'
         'whittaker.mortalityTable.R'
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2023-10-19 18:02:02 UTC; reinhold
+Packaged: 2023-10-27 08:13:42 UTC; 036134
 Repository: CRAN
-Date/Publication: 2023-10-19 18:30:05 UTC
+Date/Publication: 2023-10-27 22:40:18 UTC
